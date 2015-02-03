@@ -1,0 +1,32 @@
+Script started on Fri 23 Jan 2015 02:31:35 PM EST
+]0;ygao56@dutch: ~ygao56@dutch:~$ telnet dutch.mathcs.emory.edu 80
+Trying 170.140.150.171...
+Connected to dutch.mathcs.emory.edu.
+Escape character is '^]'.
+GET /~ygao56/ HTTP/1.0
+
+HTTP/1.1 200 OK
+Date: Fri, 23 Jan 2015 19:31:52 GMT
+Server: Apache/2.2.22 (Ubuntu)
+Last-Modified: Fri, 23 Jan 2015 06:17:19 GMT
+ETag: "5c0090-84-50d4bbdae404a"
+Accept-Ranges: bytes
+Content-Length: 132
+Vary: Accept-Encoding
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yiwei's Webpage</title>
+</head>
+<body>
+
+<h1>Hello World! (and cs370!)</h1>
+
+</body>
+</html>Connection closed by foreign host.
+]0;ygao56@dutch: ~ygao56@dutch:~$ exit
+
+Script done on Fri 23 Jan 2015 02:32:01 PM EST
