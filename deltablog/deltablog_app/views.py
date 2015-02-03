@@ -5,7 +5,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__isnull=False).order_by('published_date')
+    posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
     return render(request, 'deltablog_app/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
@@ -45,6 +45,7 @@ def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('deltablog_app.views.post_detail', pk=pk)
+    #return post_list(request)
 
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
