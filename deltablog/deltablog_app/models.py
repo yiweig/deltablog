@@ -7,6 +7,7 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    docfile = models.FileField(upload_to='documents/%Y/%m/%d', null=True, blank=True)
 
     def publish(self):
         self.published_date = timezone.now()

@@ -18,6 +18,7 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            post.docfile = request.POST.get('docfile', False)
             post.save()
             return redirect('deltablog_app.views.post_detail', pk=post.pk)
     else:

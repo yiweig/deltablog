@@ -64,7 +64,7 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = '/media/'
+MEDIA_ROOT = '/home/ygao56/deltablog/deltablog/media/'
 MEDIA_URL = '/media/'
  
 # Internationalization
