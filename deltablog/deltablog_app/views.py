@@ -18,9 +18,10 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.docfile = request.POST.get('docfile', False)
             post.save()
             return redirect('deltablog_app.views.post_detail', pk=post.pk)
+            #posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
+            #return render(request, 'deltablog_app/post_list.html', {'posts': posts})
     else:
         form = PostForm()
     return render(request, 'deltablog_app/post_edit.html', {'form': form})
@@ -39,16 +40,20 @@ def post_edit(request, pk):
     return render(request, 'deltablog_app/post_edit.html', {'form': form})
 
 def post_draft_list(request):
-    posts = Post.objects.filter(published_date__isnull=True).order_by('created_date')
+    posts = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
     return render(request, 'deltablog_app/post_draft_list.html', {'posts': posts})
 
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
-    return redirect('deltablog_app.views.post_detail', pk=pk)
-    #return post_list(request)
+    #return redirect('deltablog_app.views.post_detail', pk=pk)
+    return post_list(request)
 
 def post_remove(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('deltablog_app.views.post_list')
+    posts = Post.objects.filter(published_date__isnull=True)
+    if Post.objects.filter(published_date__isnull=True).exists():
+        return post_draft_list(request)
+    else:
+        return redirect('deltablog_app.views.post_list')
