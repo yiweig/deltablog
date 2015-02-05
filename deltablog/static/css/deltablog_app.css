@@ -18,7 +18,7 @@ h1 {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
- h2 {
+h2 {
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -39,11 +39,16 @@ h3, h4 {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
+.top-menu, .top-menu:visited {
     color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    margin-top: 20px;
+}
+
+.top-menu:hover {
+    color: #b36800;
 }
 
 .post {
