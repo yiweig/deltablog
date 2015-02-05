@@ -18,6 +18,7 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            post.image = request.FILES['image']
             post.save()
             return redirect('deltablog_app.views.post_detail', pk=post.pk)
             #posts = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
