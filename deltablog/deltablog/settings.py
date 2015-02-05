@@ -64,6 +64,8 @@ DATABASES = {
     }
 }
 
+LOGIN_REDIRECT_URL = '/'
+
 MEDIA_ROOT = '/home/ygao56/deltablog/deltablog/media/'
 MEDIA_URL = '/media/'
  

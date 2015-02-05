@@ -44,11 +44,16 @@ h3, h4 {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .top-menu:hover {
     color: #b36800;
+}
+
+.top-menu-greeting {
+    color: #ffffff;
+    font-size: 13pt;
 }
 
 .post {

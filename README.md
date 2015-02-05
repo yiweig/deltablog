@@ -5,4 +5,9 @@ http://tutorial.djangogirls.org/en/index.html
 
 Website available on:  
 http://dutch.mathcs.emory.edu:8031  
-(must be on Emory's network or VPN'd in)
+(must be on Emory's network or VPN'd in)  
+
+In order to log in, use these credentials:  
+  
+username: admin  
+password: password
