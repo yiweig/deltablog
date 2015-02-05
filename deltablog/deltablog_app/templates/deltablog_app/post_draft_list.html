@@ -3,15 +3,13 @@
 {% block content %}
 
     {% if posts %}
-
-    {% for post in posts %}
-        <div class="post">
-            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'deltablog_app.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200 }}</p>
-        </div>
-    {% endfor %}
-
+        {% for post in posts %}
+            <div class="post">
+                <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
+                <h1><a href="{% url 'deltablog_app.views.post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <p>{{ post.text|truncatechars:200 }}</p>
+            </div>
+        {% endfor %}
     {% else %}
         <h4>You have no drafts!</h4>
     {% endif %}
